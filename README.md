@@ -2,7 +2,11 @@
 
 ## 项目概述
 本项目通过综合使用Linux、Python、ROS和OpenCV，完成图像处理、目标检测和SLAM任务。任务分为三个部分：基本任务（图像处理与发布）、进阶任务（YOLO目标识别）和SLAM任务（赛道定位算法）。
-
+- '尝试.py'用于静态opencv红球识别
+- 'zhaoyuan.py'用于动态前置摄像头opencv识别
+- '1.jpg''2.jpg''3.jpg''4.jpg'是红色球识别部分样本（选择robot数据集）
+- 'img_sub''img_pub'是ROS for python上的对应代码
+- 'yolov5-master'是yolov5配置文件及教程
 ---
 
 ## 1. 基本任务：图像处理与发布
