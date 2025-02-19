@@ -1,89 +1,92 @@
-## Aelos-Roban选拔任务记录
-用于记录aelos＆roban选拔任务解决过程
+# 图像处理与ROS任务结果报告
 
-＃任务概述
-本项目旨在通过综合使用linux，python，ros，opencv等技术，完成图像处理、目标检测与发布任务。项目分为三个部分：基本任务（图像处理与发布） ）（slam 任务（赛道定位算法）（。以下是项目的详细说明和实现结果。）。以下是项目的详细说明和实现结果。）。以下是项目的详细说明和实现结果。）。以下是项目的详细说明和实现结果。
-1.基本任务：图像处理与发布
-任务目标
-使用python和opencv实现图像处理，框选红色物体并输出其坐标。
-编写img_pub.py和img_sub.py两个文件，分别用于图像发布和订阅处理。，分别用于图像发布和订阅处理。，分别用于图像发布和订阅处理。
-利用rqt_image工具查看处理后的图像。
-实现过程
-1.1图像处理
-使用opencv库函数，通过颜色阈值分割提取红色物体。，通过颜色阈值分割提取红色物体。，通过颜色阈值分割提取红色物体。
-对提取的物体进行框选，并计算其坐标。，并计算其坐标。，并计算其坐标。
-输出处理后的图像和物体坐标。
-1.2 ROS节点实现
-img_pub.py：通过cv_bridge获取摄像头图像
-img_sub.py：订阅图像话题，进行图像处理后发布处理后的图像。，进行图像处理后发布处理后的图像。，进行图像处理后发布处理后的图像。
-代码结构
-img_pub.py：负责图像发布。
-img_sub.py：负责图像处理和结果发布。
-需求.txt：列出项目依赖的python包。
-运行结果
-成功框选红色物体，并输出其坐标。，并输出其坐标。，并输出其坐标。
-利用rqt_image工具查看处理后的图像，效果良好。，效果良好。，效果良好。
-2.进阶任务：Yolo目标识别
-任务目标
-跑通Yolo框架，完成目标识别。，完成目标识别。，完成目标识别。
-将识别到的物体坐标通过ros话题发布。
-实现过程
-使用Yolov5框架进行目标检测。
-在ros中集成Yolo，将检测结果发布到指定话题。
-测试视频流中的目标识别功能。
-代码结构
-yolo_node.py：yolo目标检测节点，发布检测结果。
-需求.txt：YOLO相关依赖。
-运行结果
-成功识别视频中的物体，并输出其像素坐标。，并输出其像素坐标。，并输出其像素坐标。
-通过ros话题发布检测结果，验证功能正常。，验证功能正常。，验证功能正常。
-3。Slam任务：赛道定位算法
-任务目标
-学习SLAM相关知识，掌握ORB-SLAM2框架。
-完成赛道定位算法的实现。
-实现过程
-学习高翔《视觉SLAM十四讲》课程，理解SLAM基本原理。
-搭建ORB-SLAM2环境，运行仿真测试。
-代码结构
-ORB_SLAM2：SLAM框架代码。
-slam_node.py：ROS节点，用于SLAM功能。
-运行结果
-成功运行ORB-SLAM2，实现赛道定位。
-仿真测试显示定位效果良好，满足任务要求。
-4. 学习路线与资源
-4.1 Python
-书籍：《Python编程 从入门到实践》
-视频：B站《超基础Python教程》
-教程：菜鸟教程《Python 3 教程》
-文档：Python 3.9.7官方文档
-4.2 Linux
-教程：Linux入门教程
-4.3 ROS
-教程：古月居《ROS入门21讲》
-4.4 OpenCV
-教程：B站《OpenCV从入门到实战》
-安装：参考CSDN博客《Anaconda安装OpenCV》
-5. 补充说明
-本项目的主要目的是熟悉Linux系统操作，并跑通全流程。
-每一步操作均有详细教程支持，确保任务顺利完成。
-如有疑问，可参考相关教程或使用GPT等工具辅助学习。
-6. 项目截图与演示
-图像处理结果：./images/processed_image.png
-YOLO检测结果：./images/yolo_result.png
-SLAM仿真效果：./images/slam_simulation.png
-7. 项目依赖与环境
-操作系统：Ubuntu 20.04
-Python版本：Python 3.8
-ROS版本：ROS Noetic
-OpenCV版本：OpenCV 4.x
-YOLO版本：YOLOv5
-8. 项目成员与分工
-成员1：负责图像处理与ROS节点开发。
-成员2：负责YOLO目标识别集成。
-成员3：负责SLAM任务实现。
-9.项目总结
-本项目通过综合使用linux，python，ros，opencv等技术，slam任务。项目过程中，团队成员分工明确，学习路线清晰，最终实现了预期目标。通过实践，我们不仅掌握了相关技术，还积累了项目开发经验。，还积累了项目开发经验。
-10.项目代码与资源
-代码仓库：github链接
-相关教程：教程链接
-感谢您的阅读！
+## 项目概述
+本项目通过综合使用Linux、Python、ROS和OpenCV，完成图像处理、目标检测和SLAM任务。任务分为三个部分：基本任务（图像处理与发布）、进阶任务（YOLO目标识别）和SLAM任务（赛道定位算法）。
+
+---
+
+## 1. 基本任务：图像处理与发布
+
+### 任务目标
+- 使用Python和OpenCV检测图像中的红色物体，框选并输出其坐标。
+- 编写`img_pub.py`和`img_sub.py`两个文件，分别用于图像发布和图像处理。
+- 使用`rqt_image`工具查看处理后的图像。
+
+### 实现方法
+- **`img_pub.py`**：通过`cv_bridge`获取摄像头图像，并通过ROS的`publisher`发布图像。
+- **`img_sub.py`**：订阅图像话题，使用OpenCV进行图像处理，框选红色物体并输出其坐标。
+- 使用`rqt_image`工具查看处理后的图像。
+
+### 运行结果
+- 成功框选红色物体，并输出其坐标。
+- 处理后的图像通过`rqt_image`工具正常显示。
+
+---
+
+## 2. 进阶任务：YOLO目标识别
+
+### 任务目标
+- 跑通YOLO框架，完成目标识别。
+- 将识别到的物体坐标通过ROS话题发布。
+
+### 实现方法
+- 使用YOLOv5框架进行目标检测。
+- 在ROS中集成YOLO，将检测结果发布到指定话题。
+- 测试视频流中的目标识别功能。
+
+### 运行结果
+- 成功识别视频中的物体，并输出其像素坐标。
+- 通过ROS话题发布检测结果，验证功能正常。
+
+---
+
+## 3. 学习资源
+
+### github
+- **书籍**: 《跟wakaba酱一起学git使用》
+
+### Python
+- **书籍**：《Python编程 从入门到实践》  
+- **视频**：[超基础Python教程]([https://www.bilibili.com/video/BV1ex411x7Em/?spm_id_from=333.337.search-card.all.click&vd_source=8c2e809fc5440a60dc7429b2c21e32c7])  
+- **文档**：[Python 3.9.7官方文档](https://docs.python.org/3.9/)  
+
+### Linux
+- **教程**：[Linux入门教程](https://www.runoob.com/linux/linux-tutorial.html)  
+
+### ROS
+- **教程**：[古月居ROS入门21讲](https://www.bilibili.com/video/BV1xx411d7v7)  
+
+### OpenCV
+- **教程**：[OpenCV从入门到实战](https://www.bilibili.com/video/BV1xx411d7v7)  
+- **安装**：[Anaconda安装OpenCV](https://blog.csdn.net/iracer/article/details/10888888)
+
+---
+
+## 4. 运行环境
+- **操作系统**：Ubuntu 20.04  
+- **Python版本**：3.8  
+- **ROS版本**：Noetic  
+- **OpenCV版本**：4.8.0.74  
+- **YOLO版本**：v5  
+- **yolo项目来自**："https://github.com/huange888/yolov5_7.0_pyside6_active_learning.git"（血细胞识别）  https://github.com/ultralytics/yolov5.git（yolo环境配置教程）
+---
+
+## 5. 过程说明
+- 因假期时间安排原因，本次项目的学习过程集中于开学前几日。
+- 首先基于github平台，进行了git项目管理学习，已能熟练掌握fork、pr、branch等概念及操作，并已与团队协作进行小程序开发（https://github.com/princejiajiajing/doubaozhiyuan-final.git）。
+- 针对opencv红球识别任务，前置进行了“黑马程序员python”视频课程学习，辅以先前视觉识别实验室实习经验，在python环境利用opencv-python进行开发。
+- 学习一定ROS原理及操作,复习Linux操作系统知识。尝试用choco工具进行ROS工具配置(遗憾的是因cpu版本下载入口被墙，clash不稳定等原因中道崩殂，有代码没环境）
+- 对https://github.com/ultralytics/yolov5.git进行clone，本地化后学习yolo各模块功能
+- 对https://github.com/huange888/yolov5_7.0_pyside6_active_learning.git进行yolo项目实操，cpu版本无法全数加载Qt终端界面（应该是与PyQt5设置有关），但终端显示应已经完成了识别（cpu版本速率实在慢）。
+
+## 6. 不足与反思
+- 针对红球的视觉识别，颜色阈值（HSV二值化）与性状阈值有待优化，存在误判情况（尤其是动态情况下）。
+- ROS环境配置失败（choco工具），将使用新clash节点，或手动配置cpu版windows，ros for python（buff叠满了属于是），或尝试ubuntu上Linux版本的开发。
+- yolo识别，考虑在未来对yolo模型进行调换，实现性能的进一步提升。
+---
+
+## 7. 项目总结
+本项目成功实现了图像处理、目标检测功能。通过实践，掌握了相关技术，部分完成了预期目标，将在未来三个月内进一步学习。
+
+---
+感谢各位学长学姐的帮助！
