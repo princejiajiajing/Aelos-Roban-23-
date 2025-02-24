@@ -73,7 +73,7 @@
 - **ROS版本**：Noetic  
 - **OpenCV版本**：4.8.0.74  
 - **YOLO版本**：v5  
-- **yolo项目来自**："https://github.com/huange888/yolov5_7.0_pyside6_active_learning.git"（血细胞识别）  https://github.com/ultralytics/yolov5.git（yolo环境配置教程）
+- **yolo项目来自**："https://github.com/huange888/yolov5_7.0_pyside6_active_learning.git"（血细胞识别）  https://github.com/ultralytics/yolov5.git（yolo环境配置教程）   https://github.com/huange888/yolov5_7.0_pyside6_active_learning.git（cpu版yolov5demo）
 ---
 
 ## 5. 过程说明
@@ -81,9 +81,9 @@
 - 首先基于github平台，进行了git项目管理学习，已能熟练掌握fork、pr、branch等概念及操作，并已与团队协作进行小程序开发（https://github.com/princejiajiajing/doubaozhiyuan-final.git）。
 - 针对opencv红球识别任务，前置进行了“黑马程序员python”视频课程学习，辅以先前视觉识别实验室实习经验，在python环境利用opencv-python进行开发。
 - 学习一定ROS原理及操作,复习Linux操作系统知识。尝试用choco工具进行ROS工具配置(遗憾的是因cpu版本下载入口被墙，clash不稳定等原因中道崩殂，有代码没环境）
-- 对https://github.com/ultralytics/yolov5.git进行clone，本地化后学习yolo各模块功能
-- 对https://github.com/huange888/yolov5_7.0_pyside6_active_learning.git进行yolo项目实操，cpu版本无法全数加载Qt终端界面（应该是与PyQt5设置有关），但终端显示应已经完成了识别（cpu版本速率实在慢）。
-- 开学后，（居然三月二号才交，那ddl还有些时间），对https://github.com/Amelia0911/onnxruntime-for-yolov5.git进行cpu版本的项目实操，并成功进行了一个小demo的实践，成功跑通yolov5（hooray！）
+- 对https://github.com/ultralytics/yolov5.git  进行clone，本地化后学习yolo各模块功能
+- 对https://github.com/huange888/yolov5_7.0_pyside6_active_learning.git  进行yolo项目实操，cpu版本无法全数加载Qt终端界面（应该是与PyQt5设置有关），但终端显示应已经完成了识别（cpu版本速率实在慢）。
+- 开学后，（居然三月二号才交，那ddl还有些时间），对https://github.com/Amelia0911/onnxruntime-for-yolov5.git  进行cpu版本的项目实操，并成功进行了一个小demo的实践，成功跑通yolov5（hooray！）
 - 分析之前yolo跑不通的问题：①当时初学python虚拟环境环境配的乱乱的，anaconda还在学校的u盘里没带回去，回学校用conda环境被理顺了就好很多了。   ②gpu版本确实不太适合没卡的电脑    ③demo算量极小，可以很快出反馈
 
 ## 6. 不足与反思
